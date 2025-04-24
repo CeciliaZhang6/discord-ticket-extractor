@@ -1,0 +1,8 @@
+body {
+    background-color: var(--luxury-background);
+    color: var(--luxury-text);
+    font-family: 'Montserrat', sans-serif;
+}
+  
+  /* and more styles like .luxury-heading, .history-card, etc. */
+  

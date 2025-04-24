@@ -148,7 +148,66 @@
       cursor: pointer;
       padding: 8px;
     }
+
+    .manual-mode-section {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--discord-muted);
+    }
     
+    .manual-mode-section input {
+      width: 90%;
+      max-width: 300px;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 4px;
+      border: 1px solid var(--luxury-gold-dark);
+      background-color: var(--luxury-background-dark);
+      color: var(--luxury-text);
+      font-size: 14px;
+    }
+    
+    .manual-mode-section button {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      background: linear-gradient(to right, var(--luxury-gold-dark), var(--luxury-gold));
+      color: #23232a;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    
+    .subtitle-divider {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      color: var(--luxury-gold-dark);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }    
+
+    .manual-error {
+      margin-top: 8px;
+      color: var(--luxury-gold-dark);
+      font-size: 12px;
+    }
+    
+    .hidden {
+      display: none !important;
+    }    
+    
+    .centered-button {
+      display: block;
+      margin: 8px auto 0 auto;
+      width: fit-content;
+      padding: 8px 20px;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -168,9 +227,22 @@
           <button id="refresh-btn">Refresh</button>
         </div>
       </div>
+
+      <button id="history-btn" class="secondary-button centered-button">View History</button>
+
+      <script>
+        // TODO: change to history view when on click
+        document.getElementById('history-btn').addEventListener('click', () => {
+          console.log('History button clicked');
+          const url = chrome.runtime.getURL('history.html');
+          chrome.tabs.create({ url });
+        });        
+      </script>
+
       <div class="debug-toggle" id="debug-toggle">Show debug info</div>
       <div class="debug-info" id="debug-info">Loading...</div>
     </div>
+    
   </div>
   
   <script>
