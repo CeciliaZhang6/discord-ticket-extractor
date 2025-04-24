@@ -56,16 +56,18 @@ document.addEventListener('DOMContentLoaded', function() {
           <h3 class="luxury-heading">No Conversations Yet</h3>
           -->
           
-          <div class="manual-mode-section">
-            <h3 class="luxury-heading">Manual Extraction</h3>
-            <p>Paste the full TicketTool transcript link below:</p>
+          <div class="auto-mode-section">
+            <h3 class="luxury-heading">No Transcript Opened</h3>
+            <p>Open up your ticket transcript!</p>
+          </div>
+
+          <div class="subtitle-divider">OR</div>
+            <div class="manual-mode-section">
+            <p>Enter full TicketTool transcript link:</p>
             <input id="manual-url-input" type="text" placeholder="https://tickettool.xyz/transcript/..." />
             <button id="manual-extract-btn" class="primary-button">Open & Extract</button>
             <p id="manual-error" class="manual-error hidden">Please enter a valid TicketTool transcript URL.</p>
           </div>
-
-          <div class="subtitle-divider">OR</div>
-          <p>Go staright to your ticket transcript!</p>
           
           <div class="button-group">
             <button id="refresh-btn" class="primary-button">Refresh</button>
